@@ -27,8 +27,8 @@
                 <a href="#" id="logout">로그아웃</a>
             </div>
             <div class="main_menu">
-                <a href="#"><i class="fab fa-product-hunt"></i>제품 관리</a>
                 <a href="#"><i class="fas fa-user-friends"></i>회원 관리</a>
+                <a href="#"><i class="fab fa-product-hunt"></i>제품 관리</a>
                 <a href="#"><i class="fas fa-funnel-dollar"></i>주문 관리</a>
                 <a href="#"><i class="fas fa-calendar-day"></i>이벤트 관리</a>
             </div>
