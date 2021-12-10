@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <mapper namespace="com.gamjja.market_management.mapper.DashboardMapper">
+        <select id="getTotalProductCnt" resultType="java.lang.Integer">
+            select count(*) from product_info
+        </select>
+        <select id="getSellProductCnt" resultType="java.lang.Integer">
+            select count(*) from product_info where pi_status=1
+        </select>
+        <select id="getDeleteProductCnt" resultType="java.lang.Integer">
+            select count(*) from product_info where pi_status=0
+        </select>
+
+
+        <select id="getTotalRocketCnt" resultType="java.lang.Integer">
+            select count(*) from rocket_product_info
+        </select>
+        <select id="getSellRocketCnt" resultType="java.lang.Integer">
+            select count(*) from rocket_product_info where rpi_status=1
+        </select>
+        <select id="getDeleteRocketCnt" resultType="java.lang.Integer">
+            select count(*) from rocket_product_info where rpi_status=0
+        </select>
+
+
+        <select id="getTotalCustomerCnt" resultType="java.lang.Integer">
+            select count(*) from customer
+        </select>
+        <select id="getNomalCustomerCnt" resultType="java.lang.Integer">
+            select count(*) from customer where c_status=1
+        </select>
+        <select id="getApplyLeaveCustomerCnt" resultType="java.lang.Integer">
+            select count(*) from customer where c_status=2
+        </select>
+        <select id="getLeaveCustomerCnt" resultType="java.lang.Integer">
+            select count(*) from customer where c_status=0
+        </select>
+
+
+        <select id="getTotalOrderCnt" resultType="java.lang.Integer">
+            select count(*) from order_info
+        </select>
+        <select id="getReturnOrderCnt" resultType="java.lang.Integer">
+            select count(*) from order_info where oi_status=1
+        </select>
+        <select id="getExchangeOrderCnt" resultType="java.lang.Integer">
+            select count(*) from order_info where oi_status=2
+        </select>
+        <select id="getDecideOrderCnt" resultType="java.lang.Integer">
+            select count(*) from order_info where oi_status=0
+        </select>
+
+
+        <select id="getTotalRocketOrderCnt" resultType="java.lang.Integer">
+            select count(*) from rocket_order_info where roi_status=1
+        </select>
+        <select id="getReturnRocketOrderCnt" resultType="java.lang.Integer">
+            select count(*) from rocket_order_info where roi_status=2
+        </select>
+        <select id="getExchangeRocketOrderCnt" resultType="java.lang.Integer">
+            select count(*) from rocket_order_info where roi_status=3
+        </select>
+        <select id="getDecideRocketOrderCnt" resultType="java.lang.Integer">
+            select count(*) from rocket_order_info where roi_status=0
+        </select>
+
+
+        <select id="getTotalEventCnt" resultType="java.lang.Integer">
+            select count(*) from event where e_status=1
+        </select>
+        <select id="getActiveEventCnt" resultType="java.lang.Integer">
+            select count(*) from event where e_status=2
+        </select>
+        <select id="getDeactiveEventCnt" resultType="java.lang.Integer">
+            select count(*) from event where e_status=0
+        </select>
+    </mapper>
