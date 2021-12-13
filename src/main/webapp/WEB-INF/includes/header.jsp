@@ -24,10 +24,11 @@
                     <span>수정하기</span>
                 </a>
                 <a href="#" id="user_name">관리자(admin)</a>
-                <a href="#" id="logout">로그아웃</a>
+                <a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> 로그아웃</a>
             </div>
             <div class="main_menu">
-                <a href="#"><i class="fas fa-user-friends"></i>회원 관리</a>
+                <a href="/"><i class="fas fa-columns"></i>대시보드</a>
+                <a href="/member"><i class="fas fa-user-friends"></i>회원 관리</a>
                 <a href="#"><i class="fab fa-product-hunt"></i>제품 관리</a>
                 <a href="#"><i class="fas fa-funnel-dollar"></i>주문 관리</a>
                 <a href="#"><i class="fas fa-calendar-day"></i>이벤트 관리</a>

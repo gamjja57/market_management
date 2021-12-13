@@ -34,7 +34,7 @@
             select count(*) from customer where c_status=2
         </select>
         <select id="getLeaveCustomerCnt" resultType="java.lang.Integer">
-            select count(*) from customer where c_status=0
+            select count(*) from customer where c_status=3
         </select>
 
 

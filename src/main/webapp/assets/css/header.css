@@ -16,8 +16,14 @@ main{
     font-size: 20px; letter-spacing:0.5px
 }
 .main_menu a:hover {
-    color: #fff; background-color: #333;
+    color: #fff; color:rgb(10, 10, 109); background-color: rgb(221, 230, 247);
 }
+.main_menu i {display: inline-block; width: 30px;}
+
+.main_menu a.active {color: #fff; background-color: rgb(4, 0, 56);}
+
+
+
 
 #profile_img {
     display: inline-block; width: 100px; height: 100px;
@@ -53,6 +59,3 @@ main{
     border-radius: 5px; font-size: 15px; font-weight: 700;
 }
 #logout:hover {background-color: rgb(44, 43, 148);}
-.main_menu i {display: inline-block; width: 30px;}
-
-.main_menu a.active {color: #fff; background-color: #333;}
