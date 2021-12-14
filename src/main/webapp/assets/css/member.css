@@ -27,10 +27,10 @@ outline: none; cursor: pointer;}
 
 
 /* 검색어 박스 - 초기화 버튼 */
-#reset_btn {border: 0; background-color: rgb(103,103,124); color: #fff; width: 80px; height: 35px;
+/* #reset_btn {border: 0; background-color: rgb(103,103,124); color: #fff; width: 100px; height: 35px;
 border-radius: 99px; cursor: pointer; 
 }
-#reset_btn:hover{background-color: rgb(18,18,68);}
+#reset_btn:hover{background-color: rgb(18,18,68);} */
 
 
 
@@ -80,10 +80,10 @@ font-size: 20px; color: #434343; cursor: pointer;
 
 
 /* 회원 추가 버튼 */
-#member_add {
+/* #member_add {
     position:fixed; left: 100px; top: 100px; background-color: #fff;
     z-index: 999999; padding: 45px;
-}
+} */
 
 .popup_wrap{
     position: fixed; width: 100vw; height: 100vh; left:0; top:0;
@@ -92,10 +92,11 @@ font-size: 20px; color: #434343; cursor: pointer;
 
 .popup_wrap.open {display: block;}
 
+
 /* 추가 팝업 */
 .popup {
-    position: absolute; left: 50%; right: 50%; background-color: #fff;
-    margin-left: 500px; margin-top: -10px;
+    position: absolute; left: 50%; top: 50%; background-color: #fff;
+    margin-left: -200px; margin-top: -350px;
     z-index: 999999; padding:40px 0; width: 400px;
     background-repeat: 5px; box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
 }
@@ -113,9 +114,9 @@ border-radius: 999px; display: inline-block;}
     font-size: 16px; font-weight: 400; padding: 10px 20px; box-sizing: border-box;
     border-radius: 15px; margin-bottom: 15px; outline: none;}
 
-#c_gen {width: 175px; border-radius: 0 15px 15px 0;  padding: 10px 20px;}
-#c_status{width: 175px; border-radius: 15px 0 0 15px; 
+#c_gen {width: 175px; border-radius: 15px 0 0 15px; 
     padding: 10px 20px;}
+#c_status {width: 175px; border-radius: 0 15px 15px 0;  padding: 10px 20px;}
 
 .btn_area {
     text-align: center;
@@ -126,5 +127,7 @@ border-radius: 999px; display: inline-block;}
 }
 .btn_area #add_mem {background-color: rgb(124, 122, 122);}
 .btn_area #add_mem:hover {background-color: #333;}
+.btn_area #modify_mem {background-color: #999;}
+.btn_area #modify_mem:hover {background-color: #333;}
 .btn_area #cancel_mem {background-color: rgb(240, 126, 126);}
 .btn_area #cancel_mem:hover {background-color: rgb(255, 83, 83);}

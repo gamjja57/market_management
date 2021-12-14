@@ -17,9 +17,9 @@ public class MemberController {
 
 
     @GetMapping("/member")
-    public String getMember(Model model, @RequestParam @Nullable Integer offset) {
+    public String getMember(Model model, @RequestParam @Nullable Integer offset, @RequestParam @Nullable String keyword) {
         if(offset ==  null) offset=0;
-        Map<String, Object> resultMap = service.getMemberList(offset);
+        Map<String, Object> resultMap = service.getMemberList(offset, keyword);
         model.addAttribute("data", resultMap);
         
         return "/member/list";

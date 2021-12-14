@@ -1,12 +1,12 @@
 /*index.css*/
 main {background-color: #f7f7f7; }
-main > h1 {font-size: 36px; margin-top: 10px; margin-bottom: 40px;}
-main > h1 {padding-left:25px;}
+main > h1 {font-size: 35px; margin-top: 10px; margin-bottom: 50px;}
+main > h1 {padding-left:35px; padding-top: 10px;}
 .content_area {font-size: 0; width: 1250px;}
 .content_area > div {
     display: inline-block; vertical-align: top;
     width: 230px;height: 200px;padding: 35px; position: relative;
-    background-color: #fff;font-size: 16px; margin-left: 30px;
+    background-color: #fff;font-size: 16px; margin-left: 35px;
     border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     margin-bottom:30px 
 }
@@ -17,7 +17,7 @@ main > h1 {padding-left:25px;}
 .content_area > div h2 i {display: inline-block; width: 30px;}
 .content_area > div p {margin-bottom: 18px;font-size: 18px; color: #434343;}
 .content_area > div p span {font-weight: 700;}
-.content_area > div p:last-child {font-size: 14px; color: #999;
+.content_area > div p:last-child {font-size: 13px; color: #999;
                         position: absolute; right: 15px; bottom: 0px;
 }
 .content_area > div p:last-child span {font-weight: 400;}

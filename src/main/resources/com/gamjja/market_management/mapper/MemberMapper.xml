@@ -3,12 +3,13 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
     <mapper namespace="com.gamjja.market_management.mapper.MemberMapper">
     <select id="getMemberInfo" resultType="com.gamjja.market_management.data.MemberVO">
-        select * from customer order by c_seq desc
+        select * from customer where c_name like #{keyword}
+        order by c_seq desc
         limit 10 offset #{offset}
     </select>
 
     <select id="getMemberCount" resultType="java.lang.Integer">
-        select count(*) from customer
+        select count(*) from customer where c_name like #{keyword}
     </select>
 
     <insert id="addMember">
@@ -19,4 +20,27 @@
     <delete id="deleteMember">
         delete from customer where c_seq=#{seq}
     </delete>
+
+    <select id="getMemberInfoBySeq" resultType="com.gamjja.market_management.data.MemberVO">
+        select * from customer where c_seq=#{seq}
+    </select>
+
+    <update id="updateMember">
+        update customer
+        set c_name=#{c_name}, c_id=#{c_id}, c_pwd=#{c_pwd}, c_email=#{c_email},
+        c_birth=#{c_birth}, c_status=#{c_status}, c_gen=#{c_gen}, c_mod_dt=NOW()
+        where c_seq=#{c_seq}
+    </update>
+
+    <select id="selectLatestDataSeq" resultType="java.lang.Integer">
+        select c_seq from customer
+        order by c_seq desc limit 1
+    </select>
+
+    <insert id="insertMemberHistory">
+        INSERT INTO market_db.market_history
+        (mh_type, mh_content, mh_c_seq)
+        VALUES(#{mh_type}, #{mh_content}, #{mh_c_seq});
+    </insert>
+    
     </mapper>
