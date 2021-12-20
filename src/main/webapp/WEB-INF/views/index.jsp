@@ -35,14 +35,16 @@
                 <h2><i class="fab fa-product-hunt"></i>제품 정보</h2>
                 <p>총 제품 개수 : <span>${cnt.product[0]}개</span></p>
                 <p>판매 중 제품 : <span>${cnt.product[1]}개</span></p>
-                <p>삭제 상태 제품 : <span>${cnt.product[2]}개</span></p>
+                <p>품절 상태 제품 : <span>${cnt.product[2]}개</span></p>
+                <p>삭제 상태 제품 : <span>${cnt.product[3]}개</span></p>
                 <p><i class="far fa-clock"></i>업데이트 날짜 : <span>2021-12-09 12:00:00</span></p>
             </div>
             <div class="rocket_product_info">
                 <h2><i class="fas fa-rocket"></i>로켓배송 제품 정보</h2>
                 <p>총 로켓제품 개수 : <span>${cnt.rocket_product[0]}개</span></p>
                 <p>판매 중 제품 : <span>${cnt.rocket_product[1]}개</span></p>
-                <p>삭제 상태 제품 : <span>${cnt.rocket_product[2]}개</span></p>
+                <p>품절 상태 제품 : <span>${cnt.rocket_product[2]}개</span></p>
+                <p>삭제 상태 제품 : <span>${cnt.rocket_product[3]}개</span></p>
                 <p><i class="far fa-clock"></i>업데이트 날짜 : <span>2021-12-09 12:00:00</span></p>
             </div>
             

@@ -19,7 +19,7 @@ public class MemberAPIController {
     @Autowired MemberService service;
 
     @PostMapping("/member/add")
-    public Map<String, Object> postMemberAdd(@RequestBody MemberVO data) {
+    public Map<String, Object> postMemberAdd(@RequestBody MemberVO data) throws Exception{
         return service.addMember(data);
     }
 
@@ -37,4 +37,11 @@ public class MemberAPIController {
     public Map<String, Object> patchMemberInfo(@RequestBody MemberVO data) {
         return service.updateMemberInfo(data);
     }
+
+
+
+
+
+
+
 }

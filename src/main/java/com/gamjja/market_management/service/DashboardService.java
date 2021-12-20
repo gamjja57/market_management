@@ -18,11 +18,13 @@ public class DashboardService {
         List<Integer> productCntList = new ArrayList<Integer>();
         productCntList.add(mapper.getTotalProductCnt());
         productCntList.add(mapper.getSellProductCnt());
+        productCntList.add(mapper.getSoldoutProductCnt());
         productCntList.add(mapper.getDeleteProductCnt());
 
         List<Integer> rocket_productCntList = new ArrayList<Integer>();
         rocket_productCntList.add(mapper.getTotalRocketCnt());
         rocket_productCntList.add(mapper.getSellRocketCnt());
+        rocket_productCntList.add(mapper.getSoldoutRocketCnt());
         rocket_productCntList.add(mapper.getDeleteRocketCnt());
 
 

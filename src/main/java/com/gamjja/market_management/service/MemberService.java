@@ -7,6 +7,7 @@ import java.util.Map;
 import com.gamjja.market_management.data.MemberHistoryVO;
 import com.gamjja.market_management.data.MemberVO;
 import com.gamjja.market_management.mapper.MemberMapper;
+import com.gamjja.market_management.utils.AESAlgorithm;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -48,8 +49,10 @@ public class MemberService {
         return resultMap;
     }
 
-    public Map<String, Object> addMember(MemberVO data) {
+
+    public Map<String, Object> addMember(MemberVO data) throws Exception {
         Map<String,Object> resultMap = new LinkedHashMap<String, Object>();
+
         if(data.getC_name() == null || data.getC_name().equals("")) {
             resultMap.put("status", false);
             resultMap.put("message", "회원 이름을 입력하세요.");
@@ -73,6 +76,10 @@ public class MemberService {
             resultMap.put("message", "회원 생년월일을 입력하세요.");
             return resultMap;
         }
+
+        String pwd = data.getC_pwd();
+        String encrypted = AESAlgorithm.Encrypt(pwd);
+        data.setC_pwd(encrypted);
 
         mapper.addMember(data);
 
@@ -118,6 +125,7 @@ public class MemberService {
         return resultMap;
     }
 
+    
 public Map<String, Object> updateMemberInfo(MemberVO data) {
     Map<String, Object> resultMap= new LinkedHashMap<String, Object>();
     
@@ -137,4 +145,8 @@ public Map<String, Object> updateMemberInfo(MemberVO data) {
 
     return resultMap;
     }
+
+
+    
+
 }

@@ -8,8 +8,11 @@
         <select id="getSellProductCnt" resultType="java.lang.Integer">
             select count(*) from product_info where pi_status=1
         </select>
+        <select id="getSoldoutProductCnt" resultType="java.lang.Integer">
+            select count(*) from product_info where pi_status=2
+        </select>
         <select id="getDeleteProductCnt" resultType="java.lang.Integer">
-            select count(*) from product_info where pi_status=0
+            select count(*) from product_info where pi_status=3
         </select>
 
 
@@ -19,8 +22,11 @@
         <select id="getSellRocketCnt" resultType="java.lang.Integer">
             select count(*) from rocket_product_info where rpi_status=1
         </select>
+        <select id="getSoldoutRocketCnt" resultType="java.lang.Integer">
+            select count(*) from rocket_product_info where rpi_status=2
+        </select>
         <select id="getDeleteRocketCnt" resultType="java.lang.Integer">
-            select count(*) from rocket_product_info where rpi_status=0
+            select count(*) from rocket_product_info where rpi_status=3
         </select>
 
 

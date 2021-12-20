@@ -42,5 +42,5 @@
         (mh_type, mh_content, mh_c_seq)
         VALUES(#{mh_type}, #{mh_content}, #{mh_c_seq});
     </insert>
-    
+
     </mapper>

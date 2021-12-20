@@ -6,11 +6,13 @@ import org.apache.ibatis.annotations.Mapper;
 public interface DashboardMapper {
     public Integer getTotalProductCnt();
     public Integer getSellProductCnt();
+    public Integer getSoldoutProductCnt();
     public Integer getDeleteProductCnt();
 
 
     public Integer getTotalRocketCnt();
     public Integer getSellRocketCnt();
+    public Integer getSoldoutRocketCnt();
     public Integer getDeleteRocketCnt();
 
     public Integer getTotalCustomerCnt();

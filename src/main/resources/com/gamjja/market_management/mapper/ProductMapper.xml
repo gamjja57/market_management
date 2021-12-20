@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <mapper namespace="com.gamjja.market_management.mapper.ProductMapper">
+        <insert id="addProductInfo">
+            INSERT INTO market_db.product_info
+            (pi_ci_seq, pi_name, pi_price, pi_introduce, pi_stock, pi_status)
+            VALUES
+            (#{pi_ci_seq}, #{pi_name}, #{pi_price}, #{pi_introduce}, #{pi_stock}, #{pi_status});
+        </insert>
+
+        <!-- {
+            "pi_ci_seq":4,
+            "pi_name":"싱그러운 오렌지 주스",
+            "pi_price":5860,
+            "pi_introduce":"밭에서 딴 싱싱한 유기농 오렌지로 만든 건강 주스",
+            "pi_stock":250,
+            "pi_status":"1"
+        } -->
+
+
+
+
+    <select id="getProductByKeyword" resultType="com.gamjja.market_management.data.CategoryVO">
+        select ci_seq, ci_name, ci_sub, ci_status from category_info where ci_name like #{pro_keyword}
+    </select>
+
+
+    
+    <select id="getProductList" resultType="com.gamjja.market_management.data.ProductVO">
+        select pi_seq,category_name,pi_name,pi_price,
+        pi_introduce,pi_stock,pi_reg_dt,pi_mod_dt,pi_status
+        from
+        (
+            select a.*, b.ci_name as category_name
+            from product_info a left outer join category_info b
+            on a.pi_ci_seq = b.ci_seq
+        ) c
+        <if test="type == 'category'">
+            where category_name like #{keyword}
+        </if>
+        <if test="type == 'name'">
+            where pi_name like #{keyword}
+        </if>
+        order by pi_seq desc
+        limit 10 offset #{offset}
+    </select>
+
+
+    <select id="getProductCnt"   resultType="java.lang.Integer">
+        select count(*) from 
+            (
+                select a.*, b.ci_name as category_name
+                from product_info a left outer join category_info b
+                on a.pi_ci_seq = b.ci_seq
+            ) c
+            <if test="type == 'category'">
+                where category_name like #{keyword}
+            </if>
+            <if test="type == 'name'">
+                where pi_name like #{keyword}
+            </if>
+    </select>
+
+
+    </mapper>
