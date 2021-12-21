@@ -21,4 +21,12 @@ public class ProductVO {
 
     private String category_name;
 
+
+
+    /* 히스토리 */
+    public String makeHistoryStr() {
+        return pi_ci_seq+"|"+pi_num+"|"+pi_name+"|"+pi_price+"|"+
+        pi_introduce+"|"+pi_stock+"|"+pi_status;
+    }
+
 }

@@ -16,6 +16,8 @@
         </select>
 
 
+
+
         <select id="getTotalRocketCnt" resultType="java.lang.Integer">
             select count(*) from rocket_product_info
         </select>
@@ -34,6 +36,12 @@
             select count(*) from customer
         </select>
         <select id="getNomalCustomerCnt" resultType="java.lang.Integer">
+            select count(*) from customer where c_level=1
+        </select>
+        <select id="getRocketCustomerCnt" resultType="java.lang.Integer">
+            select count(*) from customer where c_level=2
+        </select>
+        <select id="getNomal2CustomerCnt" resultType="java.lang.Integer">
             select count(*) from customer where c_status=1
         </select>
         <select id="getApplyLeaveCustomerCnt" resultType="java.lang.Integer">
@@ -42,6 +50,8 @@
         <select id="getLeaveCustomerCnt" resultType="java.lang.Integer">
             select count(*) from customer where c_status=3
         </select>
+
+
 
 
         <select id="getTotalOrderCnt" resultType="java.lang.Integer">
@@ -81,4 +91,13 @@
         <select id="getDeactiveEventCnt" resultType="java.lang.Integer">
             select count(*) from event where e_status=0
         </select>
+
+
+        <select id="getMemberUpdateDate" resultType="java.util.Date">
+            select mh_reg_dt from market_history order by mh_reg_dt desc limit 1
+        </select>
+        <select id="getProductUpdateDate" resultType="java.util.Date">
+            select pih_reg_dt from product_info_history order by pih_reg_dt desc limit 1
+        </select>
+
     </mapper>

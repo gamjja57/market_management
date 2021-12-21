@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 
 <%@taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri = "http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -64,22 +65,23 @@
                                 <td>${p.pi_seq}</td>
                                 <td>${p.category_name}</td>
                                 <td>${p.pi_name}</td>
-                                <td>${p.pi_price}</td>
+                                <!-- <td>${p.pi_price}</td> -->
+                                <td><fmt:formatNumber value="${p.pi_price}" pattern="0,000 원"/></td>
                                 <td>${p.pi_introduce}</td>
                                 <td>${p.pi_stock}</td>
                                 <td class = "product_status">
                                     <c:if test="${p.pi_status == 1}">
-                                        <span style="background-color: rgb(80, 228, 88);">판매</span>
+                                        <span style="background-color: rgb(22, 207, 31);">판매</span>
                                     </c:if>
                                     <c:if test="${p.pi_status == 2}">
-                                        <span style="background-color: rgb(250, 237, 52);">품절</span>
+                                        <span style="background-color: rgb(238, 147, 10);">품절</span>
                                     </c:if>
                                     <c:if test="${p.pi_status == 3}">
                                         <span style="background-color: rgb(251, 64, 64);">삭제</span>
                                     </c:if>
                                 </td>
-                                <td>${p.pi_reg_dt}</td>
-                                <td>${p.pi_mod_dt}</td>
+                                <td><fmt:formatDate value="${p.pi_reg_dt}" pattern="yyyy년 MM월 dd일 (EE) HH:mm:ss"/></td>
+                                <td><fmt:formatDate value="${p.pi_mod_dt}" pattern="yyyy년 MM월 dd일 (EE) HH:mm:ss"/></td>
                                 <!-- <td>${p.pi_status}</td> -->
                                 
                                 

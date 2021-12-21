@@ -93,7 +93,7 @@ public class MemberService {
         history.setMh_type("new");
         String content = data.getC_name()+" | "+data.getC_id()+
         " | "+data.getC_pwd()+" | "+data.getC_email()+" | "+data.getC_birth()
-        +" | "+data.getC_gen()+" | "+data.getC_status();
+        +" | "+data.getC_gen()+" | "+data.getC_status()+" | "+data.getC_level();
         history.setMh_content(content);
         mapper.insertMemberHistory(history);
 
@@ -139,14 +139,12 @@ public Map<String, Object> updateMemberInfo(MemberVO data) {
     history.setMh_type("update");
     String content = data.getC_name()+" | "+data.getC_id()+
     " | "+data.getC_pwd()+" | "+data.getC_email()+" | "+data.getC_birth()
-    +" | "+data.getC_gen()+" | "+data.getC_status();
+    +" | "+data.getC_gen()+" | "+data.getC_status()+" | "+data.getC_level();
     history.setMh_content(content);
     mapper.insertMemberHistory(history);
 
     return resultMap;
     }
 
-
-    
 
 }

@@ -31,6 +31,8 @@ public class DashboardService {
         List<Integer> customerCntList = new ArrayList<Integer>();
         customerCntList.add(mapper.getTotalCustomerCnt());
         customerCntList.add(mapper.getNomalCustomerCnt());
+        customerCntList.add(mapper.getRocketCustomerCnt());
+        customerCntList.add(mapper.getNomal2CustomerCnt());
         customerCntList.add(mapper.getApplyLeaveCustomerCnt());
         customerCntList.add(mapper.getLeaveCustomerCnt());
 
@@ -63,6 +65,14 @@ public class DashboardService {
         map.put("rocket_order", rocket_orderCntList);
         map.put("event", eventCntList);
         return map;
+    }
+    public Map<String, Object> getUpdateDate()  {
+        Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
+        
+        resultMap.put("member", mapper.getMemberUpdateDate());
+        resultMap.put("product", mapper.getProductUpdateDate());
+
+        return resultMap;
     }
 }
 

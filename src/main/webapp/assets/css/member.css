@@ -18,19 +18,27 @@ main > h1 {font-size: 36px; padding-bottom: 30px; margin-bottom: 30px;
 
 /* 검색어 박스 */
 .search_box {background-color: #fff; display: inline-block; vertical-align: middle;
-    padding: 10px 20px; border-radius: 99px; margin-right: 20px; margin-top: 3px;}
+    padding: 10px 22px; border-radius: 99px; margin-right: 20px; margin-top: 3px;}
 
 .search_box input {border: 0; padding: 0; margin: 0; outline: none; color: #434343;}
 .search_box input::placeholder{color: #ccc;}
 .search_box button{color: #333; border: 0; padding: 0; margin: 0; background-color: transparent;
 outline: none; cursor: pointer;}
 
-
-/* 검색어 박스 - 초기화 버튼 */
-/* #reset_btn {border: 0; background-color: rgb(103,103,124); color: #fff; width: 100px; height: 35px;
-border-radius: 99px; cursor: pointer; 
+.customerCnt {
+    background-color: rgb(198, 216, 226); display: inline-block; vertical-align: middle;
+    padding: 12px 22px; border-radius: 99px; margin-right: 20px; margin-top: 3px;
+    color: #505050;
 }
-#reset_btn:hover{background-color: rgb(18,18,68);} */
+
+
+/* 초기화 버튼 */
+#reset_btn {
+    border: 0; background-color: rgb(112, 150, 199); color: #fff;
+    padding: 8px 15px; margin-right: 20px; margin-top: 3px;   border-radius: 5px; font-size: 16px; font-weight: 300;
+}
+#reset_btn:hover {background-color: rgb(48, 116, 204);}
+
 
 
 
@@ -42,6 +50,8 @@ border-spacing: 0 20px; }
 
 .table_area th{color: #999; font-weight: 400; padding: 20px ; padding-bottom: 5px;}
 
+/* #c_level2{border-radius: 6px; font-weight: 400; } */
+
 .table_area tbody tr {padding-bottom: 10px; border-radius: 50px;
 box-shadow: 0 0 3px rgba(0,0,0,0.05);  
 }
@@ -52,6 +62,7 @@ font-size: 14px; color: #333; }
 .table_area tbody td button {margin: 0 8px; background-color: transparent; border: 0;
 padding: 0; font-size: 20px; cursor: pointer;
 }
+
 .modify_btn {color: rgb(6, 37, 2);}
 .delete_btn {color: rgb(224,81,81);}
 
@@ -110,12 +121,15 @@ border-radius: 999px; display: inline-block;}
 .popup .top_area p {margin-top: 10px; color: #555;}
 
 .popup .content_area {padding: 40px 0; width: 350px; margin:0 auto; font-size: 0; padding-bottom: 20px;}
-.popup .content_area input, #c_status, #c_gen {width: 100%; padding: 0; margin: 0; border: 1px solid #ccc; 
+.popup .content_area input, #c_birth, #c_gen, #c_level, #c_status {width: 100%; padding: 0; margin: 0; border: 1px solid #ccc; 
     font-size: 16px; font-weight: 400; padding: 10px 20px; box-sizing: border-box;
     border-radius: 15px; margin-bottom: 15px; outline: none;}
 
-#c_gen {width: 175px; border-radius: 15px 0 0 15px; 
+#c_birth{width: 220px; border-radius: 15px 0 0 15px; 
     padding: 10px 20px;}
+#c_gen{width: 130px; border-radius: 0 15px 15px 0;  padding: 10px 20px;}
+#c_level {width: 175px; border-radius: 15px 0 0 15px; 
+    padding: 10px 20px;} 
 #c_status {width: 175px; border-radius: 0 15px 15px 0;  padding: 10px 20px;}
 
 .btn_area {
@@ -131,3 +145,11 @@ border-radius: 999px; display: inline-block;}
 .btn_area #modify_mem:hover {background-color: #333;}
 .btn_area #cancel_mem {background-color: rgb(240, 126, 126);}
 .btn_area #cancel_mem:hover {background-color: rgb(255, 83, 83);}
+
+
+
+/* 데이터 목록 관리 */
+    .customer_status span {
+    display: inline-block; padding: 5px 15px; color: #fff;
+    font-size: 15px; border-radius: 3px; width: 30px;
+    }

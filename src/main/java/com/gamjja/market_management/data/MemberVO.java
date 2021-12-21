@@ -16,4 +16,5 @@ public class MemberVO {
     private Integer c_gen;
     private Date c_reg_dt;
     private Date c_mod_dt;
+    private Integer c_level;
 }

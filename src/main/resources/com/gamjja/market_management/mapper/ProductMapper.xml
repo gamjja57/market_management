@@ -6,7 +6,7 @@
             INSERT INTO market_db.product_info
             (pi_ci_seq, pi_name, pi_price, pi_introduce, pi_stock, pi_status)
             VALUES
-            (#{pi_ci_seq}, #{pi_name}, #{pi_price}, #{pi_introduce}, #{pi_stock}, #{pi_status});
+            (#{pi_ci_seq}, #{pi_name}, #{pi_price}, #{pi_introduce}, #{pi_stock}, #{pi_status})
         </insert>
 
         <!-- {
@@ -62,5 +62,46 @@
             </if>
     </select>
 
+
+    <delete id="deleteProductInfo">
+        delete from product_info where pi_seq = #{seq}
+    </delete>
+    <select id="isExistProduct" resultType="java.lang.Integer">
+        select count(*) from product_info where pi_seq = #{seq}
+    </select>
+
+
+
+
+    <select id="getProductInfoBySeq" resultType="com.gamjja.market_management.data.ProductVO">
+        select pi_seq, pi_ci_seq,pi_name,pi_price,
+                pi_introduce,pi_stock,pi_status, ci_name as category_name
+        from
+            product_info a left outer join category_info b
+        on
+            a.pi_ci_seq = b.ci_seq
+        where
+            pi_seq = #{seq}
+    </select>
+    <!-- 이쪽 SQL을 수정해야되겠는데요 -->
+    <update id="updateProductInfo">
+        UPDATE product_info
+        SET pi_ci_seq=#{pi_ci_seq}, pi_name=#{pi_name}, 
+        pi_price=#{pi_price}, pi_introduce=#{pi_introduce}, 
+        pi_stock=#{pi_stock}, pi_status=#{pi_status}, pi_mod_dt= NOW()
+        WHERE pi_seq=#{pi_seq}
+    </update>
+
+
+    <!-- 히스토리 부분 -->
+    <insert id="insertProductHistory">
+        insert into product_info_history
+        (pih_pi_seq, pih_type, pih_content)
+        values
+        (#{pih_pi_seq},#{pih_type},#{pih_content})
+    </insert>
+    <select id="getRecentAddedProductSeq" resultType="java.lang.Integer">
+        select pi_seq from product_info order by pi_seq desc limit 1
+    </select>
 
     </mapper>

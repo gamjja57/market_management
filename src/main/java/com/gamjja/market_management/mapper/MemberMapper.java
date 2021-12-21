@@ -19,11 +19,19 @@ public interface MemberMapper {
 
     public MemberVO getMemberInfoBySeq(Integer seq);
 
+
     public void updateMember(MemberVO data);
 
     public Integer getMemberCount(String keyword);
 
     public Integer selectLatestDataSeq();
     public Integer insertMemberHistory(MemberHistoryVO data);
+
+
+
+    // public MemberVO getLevelCustomerSeparate1(Integer seq);
+    // public MemberVO getLevelCustomerSeparate2(Integer seq);
+
+
 
 }

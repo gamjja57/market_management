@@ -20,6 +20,7 @@ $(function() {
         let mem_email = $("#c_email").val();
         let mem_birth = $("#c_birth").val();
         let mem_status = $("#c_status option:selected").val();
+        let mem_level = $("#c_level option:selected").val();
         let mem_gen = $("#c_gen option:selected").val();
         
         let data = {
@@ -29,6 +30,7 @@ $(function() {
             c_email:mem_email,
             c_birth:mem_birth,
             c_status:mem_status,
+            c_level:mem_level,
             c_gen:mem_gen
         }
 
@@ -57,6 +59,7 @@ $(function() {
         $("#c_pwd").val("");
         $("#c_birth").val("");
         $("#c_status").val("1").prop("selected", true);
+        $("#c_level").val("1").prop("selected", true);
         $("#c_gen").val("1").prop("selected", true);
         
         $(".popup_wrap").removeClass("open");    
@@ -101,6 +104,7 @@ $(function() {
                 $("#c_pwd").val(r.data.c_pwd);
                 $("#c_birth").val(r.data.c_birth);
                 $("#c_gen").val(r.data.c_gen).prop("selected", true);
+                $("#c_level").val(r.data.c_level).prop("selected", true);
                 $("#c_status").val(r.data.c_status).prop("selected", true);
             }
     })
@@ -117,6 +121,7 @@ $(function() {
             let mem_email = $("#c_email").val();
             let mem_birth = $("#c_birth").val();
             let mem_status = $("#c_status option:selected").val();
+            let mem_level = $("#c_level option:selected").val();
             let mem_gen = $("#c_gen option:selected").val();
             
             let data = {
@@ -127,6 +132,7 @@ $(function() {
                 c_email:mem_email,
                 c_birth:mem_birth,
                 c_status:mem_status,
+                c_level:mem_level,
                 c_gen:mem_gen
             }
 
@@ -152,6 +158,12 @@ $(function() {
             }
         })
 
+/* 초기화 버튼 */
+$("#reset_btn").click(function(){
+    let type= $("#search_type option:selected").val("1").prop("selected", true);
+    let keyword = $("#keyword").val("");
 
+    location.href = "/member";
+})
 
 })

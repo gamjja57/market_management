@@ -13,8 +13,8 @@
     </select>
 
     <insert id="addMember">
-        insert into customer(c_name, c_id, c_pwd, c_email, c_birth, c_status, c_gen)
-        values(#{c_name}, #{c_id}, #{c_pwd}, #{c_email}, #{c_birth}, #{c_status}, #{c_gen})
+        insert into customer(c_name, c_id, c_pwd, c_email, c_birth, c_status, c_gen, c_level)
+        values(#{c_name}, #{c_id}, #{c_pwd}, #{c_email}, #{c_birth}, #{c_status}, #{c_gen}, #{c_level})
     </insert>
 
     <delete id="deleteMember">
@@ -27,7 +27,7 @@
 
     <update id="updateMember">
         update customer
-        set c_name=#{c_name}, c_id=#{c_id}, c_pwd=#{c_pwd}, c_email=#{c_email},
+        set c_name=#{c_name}, c_id=#{c_id}, c_pwd=#{c_pwd}, c_email=#{c_email}, c_level=#{c_level},
         c_birth=#{c_birth}, c_status=#{c_status}, c_gen=#{c_gen}, c_mod_dt=NOW()
         where c_seq=#{c_seq}
     </update>

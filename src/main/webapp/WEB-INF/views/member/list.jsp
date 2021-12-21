@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 
 <%@taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri = "http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,11 +28,14 @@
         <div class="content_area">
             <div class="menu_area">
                 <div class="search_box">
-                    <input type="text" id="keyword" placeholder="검색어 입력" value="${data.keyword}">
+                    <input type="text" id="keyword" placeholder="회원 이름 입력" value="${data.keyword}">
                     <button id="search_btn"><i class="fas fa-search"></i></button>
                     </div>
-                    <!-- <button id="reset_btn"><i class="fas fa-trash-restore-alt"></i>  초기화</button> -->
-                </div>
+                    <button id="reset_btn">초기화</button>
+                <!-- <div class= "customerCnt">
+                    <p>일반 회원 수 : <span>${cnt.customer[4]}명 / 로켓와우 회원 수 : <span>${cnt.customer[5]}명</span></p>
+                </div> -->
+            </div>
             
             <div class="table_area">
                     <table>
@@ -44,6 +48,7 @@
                                 <th>이메일</th>
                                 <th>생년월일</th>
                                 <th>성별</th>
+                                <th>Level</th>
                                 <th>회원상태</th>
                                 <th>회원 등록일</th>
                                 <th>회원 수정일</th>
@@ -63,10 +68,27 @@
                                 <td>****</td>
                                 <td>${c.c_email}</td>
                                 <td>${c.c_birth}</td>
-                                <td>${c.c_gen}</td>
-                                <td>${c.c_status}</td>
-                                <td>${c.c_reg_dt}</td>
-                                <td>${c.c_mod_dt}</td>
+                                <!-- <td>${c.c_gen}</td> -->
+                                <td class = "c.c_gen">
+                                    <c:if test="${c.c_gen == 1}">남</c:if>
+                                    <c:if test="${c.c_gen == 2}">여</c:if>
+                                </td>
+                                <td class = "customer_status">
+                                    <c:if test="${c.c_level == 1}">
+                                        <span style="background-color: rgb(215, 159, 230);">일반</span>
+                                    </c:if>
+                                    <c:if test="${c.c_level == 2}">
+                                        <span style="background-color: rgb(68, 112, 233);">로켓</span>
+                                    </c:if>
+                                </td>
+                                <!-- <td>${c.c_status}</td> -->
+                                <td class = "c.c_status">
+                                    <c:if test="${c.c_status == 1}">정상</c:if>
+                                    <c:if test="${c.c_status == 2}">탈퇴 대기</c:if>
+                                    <c:if test="${c.c_status == 3}">탈퇴 완료</c:if>
+                                </td>
+                                <td><fmt:formatDate value="${c.c_reg_dt}" pattern="yyyy년 MM월 dd일 (EE) HH:mm:ss"/></td>
+                                <td><fmt:formatDate value="${c.c_mod_dt}" pattern="yyyy년 MM월 dd일 (EE) HH:mm:ss"/></td>
                                 <td>
                                     <button class="modify_btn" data-seq="${c.c_seq}"><i class="fas fa-pencil-alt"></i></button>
                                     <button class="delete_btn" data-seq="${c.c_seq}"><i class="fas fa-minus-circle"></i></button>
@@ -105,6 +127,10 @@
             <select id="c_gen">
                 <option value="1">남</option>
                 <option value="2">여</option>
+            </select>
+            <select id="c_level">
+                <option value="1">일반</option>
+                <option value="2">로켓</option>
             </select>
             <select id="c_status">
                 <option value="1">정상</option>

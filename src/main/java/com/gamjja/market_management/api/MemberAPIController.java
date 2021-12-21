@@ -29,9 +29,13 @@ public class MemberAPIController {
     }
 
     @GetMapping("/member/get")
-    public Map<String, Object> getMemberInfoBySeq(@RequestParam Integer seq) {
+    public Map<String, Object> getMemberInfoBySeq(@RequestParam Integer seq, @RequestParam Integer level) {
         return service.getMemberInfoBySeq(seq);
+
     }
+
+
+
 
     @PatchMapping("/member/update")
     public Map<String, Object> patchMemberInfo(@RequestBody MemberVO data) {
