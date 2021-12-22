@@ -3,6 +3,7 @@ package com.gamjja.market_management.mapper;
 import java.util.List;
 
 import com.gamjja.market_management.data.CategoryVO;
+import com.gamjja.market_management.data.RoProductHistoryVO;
 import com.gamjja.market_management.data.RocketProductVO;
 
 import org.apache.ibatis.annotations.Mapper;
@@ -22,5 +23,11 @@ public interface RocketMapper {
 
 
     public RocketProductVO getRoProductInfoBySeq (Integer seq);
-    public void updateRoProductInfo(RocketProductVO data);    
+    public void updateRoProductInfo(RocketProductVO data);   
+    
+    
+
+
+    public void insertRoProductHistory(RoProductHistoryVO data);
+    public Integer getRecentAddedRoProductSeq();
 }

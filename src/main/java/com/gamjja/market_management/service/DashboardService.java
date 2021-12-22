@@ -71,6 +71,7 @@ public class DashboardService {
         
         resultMap.put("member", mapper.getMemberUpdateDate());
         resultMap.put("product", mapper.getProductUpdateDate());
+        resultMap.put("r_product", mapper.getProductUpdateDate());
 
         return resultMap;
     }

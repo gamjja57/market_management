@@ -44,4 +44,5 @@ public interface DashboardMapper {
 
     public Date getMemberUpdateDate();
     public Date getProductUpdateDate();
+    public Date getRoProductUpdateDate();
 }

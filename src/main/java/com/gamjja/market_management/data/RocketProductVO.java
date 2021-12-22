@@ -21,4 +21,9 @@ public class RocketProductVO {
 
     private String category_name;
 
+
+    public String makeHistoryStr() {
+        return rpi_ci_seq+"|"+rpi_name+"|"+rpi_price+"|"+
+        rpi_introduce+"|"+rpi_stock+"|"+rpi_status;
+    }
 }

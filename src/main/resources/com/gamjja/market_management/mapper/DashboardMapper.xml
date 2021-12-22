@@ -99,5 +99,8 @@
         <select id="getProductUpdateDate" resultType="java.util.Date">
             select pih_reg_dt from product_info_history order by pih_reg_dt desc limit 1
         </select>
+        <select id="getRoProductUpdateDate" resultType="java.util.Date">
+            select rih_reg_dt from ro_product_info_history order by rih_reg_dt desc limit 1
+        </select>
 
     </mapper>

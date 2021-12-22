@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.gamjja.market_management.data.CategoryVO;
+import com.gamjja.market_management.data.RoProductHistoryVO;
 import com.gamjja.market_management.data.RocketProductVO;
 import com.gamjja.market_management.mapper.RocketMapper;
 
@@ -18,6 +19,13 @@ public class RocketProductService {
     public Map<String, Object> addRoProductInfo(RocketProductVO data) {
         Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
 
+        RoProductHistoryVO history = new RoProductHistoryVO();
+        history.setRih_type("new");
+        history.setRih_content(data.makeHistoryStr());
+        Integer recent_seq = mapper.getRecentAddedRoProductSeq();
+        history.setRih_rpi_seq(recent_seq);
+
+        mapper.insertRoProductHistory(history);
 
         mapper.addRoProductInfo(data);
 
@@ -84,6 +92,11 @@ public class RocketProductService {
             mapper.deleteRoProductInfo(seq);
             resultMap.put("status", true);
             resultMap.put("message", "삭제 했습니다.");
+
+            RoProductHistoryVO history = new RoProductHistoryVO();
+            history.setRih_type("delete");
+            history.setRih_rpi_seq(seq);
+            mapper.insertRoProductHistory(history);
         }
         return resultMap;
     }
@@ -100,6 +113,12 @@ public class RocketProductService {
 
         resultMap.put("status", true);
         resultMap.put("message", "수정되었습니다.");
+
+        RoProductHistoryVO history = new RoProductHistoryVO();
+        history.setRih_type("modify");
+        history.setRih_content(data.makeHistoryStr());
+        history.setRih_rpi_seq(data.getRpi_seq());
+        mapper.insertRoProductHistory(history);
 
         return resultMap;
     }

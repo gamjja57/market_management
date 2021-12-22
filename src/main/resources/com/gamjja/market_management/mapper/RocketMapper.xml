@@ -84,4 +84,14 @@
             WHERE rpi_seq=#{rpi_seq}
         </update>
     
+
+        <insert id="insertRoProductHistory">
+            insert into ro_product_info_history
+            (rih_rpi_seq, rih_type, rih_content)
+            values
+            (#{rih_rpi_seq},#{rih_type},#{rih_content})
+        </insert>
+        <select id="getRecentAddedRoProductSeq" resultType="java.lang.Integer">
+            select rpi_seq from rocket_product_info order by rpi_seq desc limit 1
+        </select>
     </mapper>
