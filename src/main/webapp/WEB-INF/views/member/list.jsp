@@ -31,8 +31,7 @@
                     <input type="text" id="keyword" placeholder="회원 이름 입력" value="${data.keyword}">
                     <button id="search_btn"><i class="fas fa-search"></i></button>
                     </div>
-                    <button id="reset_btn">초기화</button>
-                <!-- <div class= "customerCnt">
+                    <button id="reset_btn"><i class="fas fa-undo"></i></button>   <!--초기화-->                <!-- <div class= "customerCnt">
                     <p>일반 회원 수 : <span>${cnt.customer[4]}명 / 로켓와우 회원 수 : <span>${cnt.customer[5]}명</span></p>
                 </div> -->
             </div>
