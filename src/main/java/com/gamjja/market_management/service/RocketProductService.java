@@ -56,7 +56,7 @@ public class RocketProductService {
         Integer cnt = mapper.getRoProductCnt(type, keyword);
 
         Integer page = cnt/10;
-        if(page%10 >0) page++;
+        if(cnt%10 >0) page++;
 
         resultMap.put("status", true);
         resultMap.put("pageCnt", page);
