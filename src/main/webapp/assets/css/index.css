@@ -1,6 +1,6 @@
 /*index.css*/
 main {background-color: #f7f7f7; }
-main > h1 {font-size: 35px; margin-top: 2px; margin-bottom: 50px;}
+main > h1 {font-size: 35px; margin-top: 2px; margin-bottom: 40px;}
 main > h1 {padding-left:35px; padding-top: 10px;}
 .content_area {font-size: 0; width: 1250px;}
 .content_area > div {

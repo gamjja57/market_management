@@ -104,4 +104,11 @@
         select pi_seq from product_info order by pi_seq desc limit 1
     </select>
 
+
+
+    <!-- 로켓 -->
+    <!-- <insert id="insertRocketProduct">
+        insert into rocket_product_info(rpi_ci_seq, rpi_name, rpi_price, rpi_status, rpi_stock, rpi_intoduce)
+        values (#{rpi_ci_seq}, #{rpi_name}, #{rpi_price}, #{rpi_status}, #{rpi_stock}, #{rpi_intoduce} )
+    </insert> -->
     </mapper>

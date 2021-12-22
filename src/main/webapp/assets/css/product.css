@@ -8,7 +8,7 @@ main > h1 {font-size: 36px; padding-bottom: 30px; margin-bottom: 30px;
 #add_product {
     position: absolute; right: 35px; top: 30px;
     border: 0; background-color: rgb(75, 109, 153); color: #fff;
-    width: 150px; height: 45px; border-radius: 5px; font-size: 14px; font-weight: 300;
+    width: 150px; height: 42px; border-radius: 5px; font-size: 14px; font-weight: 300;
 }
 #add_product i {margin-right: 5px;}
 #add_product:hover {background-color: rgb(33, 74, 128);}
@@ -16,9 +16,21 @@ main > h1 {font-size: 36px; padding-bottom: 30px; margin-bottom: 30px;
 /* 초기화 버튼 */
 #reset_btn {
     border: 0; background-color: rgb(112, 150, 199); color: #fff;
-    width: 75px; height: 35px; border-radius: 5px; font-size: 16px; font-weight: 300;
+    border-radius: 5px; font-size: 16px; font-weight: 300;
+    padding:8px 15px;
 }
 #reset_btn:hover {background-color: rgb(48, 116, 204);}
+
+
+
+/*로켓*/
+.menu_area a {border: 0; background-color: rgb(75, 109, 153); color: #fff;
+    width: 150px; height: 45px; border-radius: 5px; font-size: 15.8px; font-weight: 300;
+    padding:8px 15px;
+}
+.menu_area a:hover {background-color: rgb(13, 54, 107);}
+
+
 
 
 /* 검색어 박스 */
@@ -83,7 +95,7 @@ outline: none; cursor: pointer;}
     .popup {
         position: absolute; left: 50%; top: 50%; background-color: #fff;
         margin-left: -200px; margin-top: -350px;
-        z-index: 999999; padding:40px 0; width: 450px;
+        z-index: 999999; padding:30px 0; width: 450px;
         background-repeat: 5px; box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
     }
     
@@ -97,12 +109,13 @@ outline: none; cursor: pointer;}
     
     .popup .content_area {padding: 40px 0; width: 320; margin:0 auto; font-size: 0; padding-bottom: 20px;}
     
-    .popup .content_area input, #pi_status,
+    .popup .content_area input, #pi_status, #rpi_status,
     .popup .content_area button {width: 100%; padding: 0; margin: 0; border: 1px solid #ccc; 
         font-size: 16px; font-weight: 400; padding: 10px 20px; box-sizing: border-box;
         border-radius: 15px; margin-bottom: 15px; outline: none;}
 
     .popup .content_area #pi_ci_seq {width: 70%; border-radius: 15px 0 0 15px;}
+    .popup .content_area #rpi_ci_seq {width: 70%; border-radius: 15px 0 0 15px;}
     .popup .content_area #search_pro {width: 30%; border-radius: 0 15px 15px 0;}
 
     /* #pi_ci_seq {width: 175px; border-radius: 15px 0 0 15px; 

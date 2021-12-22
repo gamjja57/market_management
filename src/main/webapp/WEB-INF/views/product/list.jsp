@@ -34,9 +34,10 @@
                     
                     <input type="text" id="keyword" placeholder="검색어 입력" value="${data.keyword}">
                     <button id="search_btn"><i class="fas fa-search"></i></button>
-                
+                    
                 </div>
-                <button id="reset_btn">초기화</button>
+                <button id="reset_btn"><i class="fas fa-undo"></i></button>   <!--초기화-->
+                <a href="/rocket/product"><i class="fas fa-rocket"></i>  로켓제품 보기</a>
             </div>
             <div class="table_area">
                     <table>

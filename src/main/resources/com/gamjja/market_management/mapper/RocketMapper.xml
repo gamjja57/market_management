@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <mapper namespace="com.gamjja.market_management.mapper.RocketMapper">
+            <insert id="addRoProductInfo">
+                INSERT INTO rocket_product_info
+                (rpi_ci_seq, rpi_name, rpi_price, rpi_introduce, rpi_stock, rpi_status)
+                VALUES
+                (#{rpi_ci_seq}, #{rpi_name}, #{rpi_price}, #{rpi_introduce}, #{rpi_stock}, #{rpi_status})
+            </insert>
+    
+    
+
+    
+        <select id="getRoProductByKeyword" resultType="com.gamjja.market_management.data.CategoryVO">
+            select ci_seq, ci_name, ci_sub, ci_status from category_info where ci_name like #{r_pro_keyword}
+        </select>
+    
+    
+        
+        <select id="getRoProductList" resultType="com.gamjja.market_management.data.RocketProductVO">
+            select rpi_seq,category_name,rpi_name,rpi_price,
+            rpi_introduce,rpi_stock,rpi_reg_dt,rpi_mod_dt,rpi_status
+            from
+            (
+                select a.*, b.ci_name as category_name
+                from rocket_product_info a left outer join category_info b
+                on a.rpi_ci_seq = b.ci_seq
+            ) c
+            <if test="type == 'category'">
+                where category_name like #{keyword}
+            </if>
+            <if test="type == 'name'">
+                where rpi_name like #{keyword}
+            </if>
+            order by rpi_seq desc
+            limit 10 offset #{offset}
+        </select>
+    
+    
+        <select id="getRoProductCnt"  resultType="java.lang.Integer">
+            select count(*) from 
+                (
+                    select a.*, b.ci_name as category_name
+                    from rocket_product_info a left outer join category_info b
+                    on a.rpi_ci_seq = b.ci_seq
+                ) c
+                <if test="type == 'category'">
+                    where category_name like #{keyword}
+                </if>
+                <if test="type == 'name'">
+                    where rpi_name like #{keyword}
+                </if>
+        </select>
+    
+    
+        <delete id="deleteRoProductInfo">
+            delete from rocket_product_info where rpi_seq = #{seq}
+        </delete>
+        <select id="isExistRoProduct" resultType="java.lang.Integer">
+            select count(*) from rocket_product_info where rpi_seq = #{seq}
+        </select>
+    
+    
+    
+    
+        <select id="getRoProductInfoBySeq" resultType="com.gamjja.market_management.data.RocketProductVO">
+            select rpi_seq, rpi_ci_seq,rpi_name,rpi_price,
+                    rpi_introduce,rpi_stock,rpi_status, ci_name as category_name
+            from
+            rocket_product_info a left outer join category_info b
+            on
+                a.rpi_ci_seq = b.ci_seq
+            where
+                rpi_seq = #{seq}
+        </select>
+
+
+        <update id="updateRoProductInfo">
+            UPDATE rocket_product_info
+            SET rpi_ci_seq=#{rpi_ci_seq}, rpi_name=#{rpi_name}, 
+            rpi_price=#{rpi_price}, rpi_introduce=#{rpi_introduce}, 
+            rpi_stock=#{rpi_stock}, rpi_status=#{rpi_status}, rpi_mod_dt= NOW()
+            WHERE rpi_seq=#{rpi_seq}
+        </update>
+    
+    </mapper>

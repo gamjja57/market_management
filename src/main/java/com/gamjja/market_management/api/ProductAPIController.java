@@ -20,7 +20,7 @@ public class ProductAPIController {
     @Autowired ProductService service;
 
     @PostMapping("/product/add")
-    public Map<String, Object> postTeacherAdd(@RequestBody ProductVO data) {
+    public Map<String, Object> postProductAdd(@RequestBody ProductVO data) {
         return service.addProductInfo(data);
     }
 
@@ -43,4 +43,25 @@ public class ProductAPIController {
     public Map<String, Object> patchProductInfo(@RequestBody ProductVO data)  {
         return service.patchProductInfo(data);
     }
+
+
+
+
+
+
+    // @Autowired ProductMapper mapper;
+    // @PostMapping("/product/R_list")
+    // public Map<String, Object> postRocketProduct(@RequestBody RocketProductVO data) {
+    //     Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
+        
+        
+    //     mapper.insertRocketProduct(data);
+        
+    //     resultMap.put("status", true);
+    //     resultMap.put("message", "완료되었습니다.");
+    //     return resultMap;
+    // }
 }
+
+
+

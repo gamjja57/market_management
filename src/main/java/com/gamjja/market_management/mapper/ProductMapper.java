@@ -29,5 +29,14 @@ public interface ProductMapper {
 
     /* 히스토리 */
     public void insertProductHistory(ProductHistoryVO data);
-    public Integer getRecentAddedProductSeq(); 
+    public Integer getRecentAddedProductSeq();
+    
+    
+
+
+
+
+    /*로켓*/
+    
+// public void insertRocketProduct(RocketProductVO data);
 }
